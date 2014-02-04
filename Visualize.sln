@@ -10,6 +10,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyToProcess", "AssemblyToProcess\AssemblyToProcess.csproj", "{1A24866D-4DD7-4432-9D8F-EBEF8F4517B1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{CB4D487F-8FB9-4EC9-968A-536FC2C1F1E9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1A24866D-4DD7-4432-9D8F-EBEF8F4517B1} = {1A24866D-4DD7-4432-9D8F-EBEF8F4517B1}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nuget", "NuGet\Nuget.csproj", "{073A11E5-CFC5-48AB-B850-81DD0079744A}"
 EndProject
