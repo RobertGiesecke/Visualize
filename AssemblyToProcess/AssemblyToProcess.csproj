@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SimpleEnum.cs" />
+    <Compile Include="ClassWithPropertiesDescendant.cs" />
     <Compile Include="GenericClassWithIEnumerable.cs" />
     <Compile Include="GenericClassWithICollection.cs" />
     <Compile Include="ClassWithExistingAttributes.cs" />
