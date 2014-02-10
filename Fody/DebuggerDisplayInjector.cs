@@ -51,15 +51,15 @@ public static class DebuggerDisplayInjector
 
         //var typeDefinition = typeReference.Resolve();
 
-        //if (typeDefinition.IsEnum)
-        //    return true;
-
         if (typeReference.IsGenericInstance && typeReference.Name == "Nullable`1")
         {
             var genericType = (GenericInstanceType)typeReference;
             return basicNames.Contains(genericType.GenericArguments[0].Name);
         }
 
+        if (typeReference.Resolve().IsEnum)
+            return true;
+        
         return false;
     }
 }
