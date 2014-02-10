@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Mono.Cecil;
 using NUnit.Framework;
 
 namespace Tests
@@ -26,9 +21,7 @@ namespace Tests
         [Test]
         public void DisplayInheritedProperties()
         {
-            var asm = AssemblyDefinition.ReadAssembly(AssemblyWeaver.AfterAssemblyPath,
-                                                      new ReaderParameters(ReadingMode.Deferred));
-            var classWithPropertiesDescendant = asm.MainModule.GetType("AssemblyToProcess.ClassWithPropertiesDescendant");
+            var classWithPropertiesDescendant = AssemblyWeaver.Assembly.GetType("AssemblyToProcess.ClassWithPropertiesDescendant", true);
             var fullName = typeof(DebuggerDisplayAttribute).FullName;
 
             var debuggerDisplay = classWithPropertiesDescendant.CustomAttributes.FirstOrDefault(t => t.AttributeType.FullName == fullName);
